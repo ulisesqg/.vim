@@ -28,6 +28,12 @@ map <C-l> <C-W>l
 map <S-Up> :m-2<CR>
 map <S-Down> :m+1<CR>
 
+" maps for move in lines
+map <S-Left> 0
+map <S-Right> $
+imap <S-Left> <ESC>I
+imap <S-Right> <ESC>A
+
 " copy and paste and available in os clipboad
 vmap <C-c> "+yi
 vmap <C-x> "+c
