@@ -50,6 +50,7 @@ Plugin 'vim-airline/vim-airline'        " better status bar
 Plugin 'vim-airline/vim-airline-themes' " themes for airline
 Plugin 'tpope/vim-fugitive'             " vim wrapper for git
 Plugin 'valloric/youcompleteme'         " autocomplete for vim
+Plugin 'mattn/emmet-vim'                " emmet
 
 " colorschemes
 Plugin 'danilo-augusto/vim-afterglow'
@@ -117,6 +118,11 @@ imap <F9> <ESC>:Errors<cr>
 
 " Airline config
 let g:airline_theme='base16'
+
+" Emmet
+let g:user_emmet_expandabbr_key=',,'
+imap <expr> ,, emmet#expandAbbrIntelligent(",,") 
+
 
 """""""""""""""""""""""
 " UI CONFIG           "
