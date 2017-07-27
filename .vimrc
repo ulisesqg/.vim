@@ -1,4 +1,3 @@
-
 """""""""""""""""""""""
 " GENERAL CONFIG      "
 """""""""""""""""""""""
@@ -25,6 +24,12 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+
+" copy and paste and available in os clipboad
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
 """"""""""""""""""""""
 " PLUGINS            "
 """"""""""""""""""""""
