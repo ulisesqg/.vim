@@ -101,8 +101,7 @@ endfunction
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-  
-  
+
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
@@ -171,4 +170,8 @@ endfunction
 nmap <F5> :call ToggleRelativeNumbers()<CR>
 imap <F5> <ESC>:call ToggleRelativeNumbers()<CR>a
 
-
+if !exists(":DiffOrig")
+    command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+          \ | wincmd p | diffthis
+endif
+noremap <C-d> :DiffOrig<CR>
