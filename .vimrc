@@ -24,6 +24,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" maps for easily move lines
+map <S-Up> :m-2<CR>
+map <S-Down> :m+1<CR>
 
 " copy and paste and available in os clipboad
 vmap <C-c> "+yi
