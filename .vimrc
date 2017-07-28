@@ -19,8 +19,8 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 " remap ESC
-noremap uu <ESC>
-imap uu <ESC>
+inoremap <ESC> <NOP>
+inoremap uu <ESC>
 
 " remap ` to list buffers
 map <Leader>l :ls<CR>
