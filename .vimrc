@@ -22,6 +22,9 @@ noremap <Right> <NOP>
 noremap uu <ESC>
 imap uu <ESC>
 
+" remap ` to list buffers
+map <Leader>l :ls<CR>
+
 " smart way to move between windows
 map <C-h> <C-W>h
 map <C-j> <C-W>j
@@ -57,7 +60,7 @@ Plugin 'scrooloose/NERDTree'            " NERDTree file explorer
 Plugin 'kien/ctrlp.vim'                 " file finder
 Plugin 'ntpeters/vim-better-whitespace' " better whitespaces
 Plugin 'nathanaelkane/vim-indent-guides'        " visually display indentation
-Plugin 'vim-syntastic/syntastic'        " syntax checker
+Plugin 'w0rp/ale'                       " Asincronous linting engine
 Plugin 'jiangmiao/auto-pairs'           " auto pair quotes, brackets etc
 Plugin 'vim-airline/vim-airline'        " better status bar
 Plugin 'vim-airline/vim-airline-themes' " themes for airline
@@ -107,7 +110,7 @@ let g:indent_guides_enable_on_vim_startup = 1 "start vim with tab highlighting
 nmap <F8> :IndentGuidesToggle<CR>
 imap <F8> <ESC>:IndentGuidesToggle()<CR>
 
-" Syntastic config
+" statusline config
 function! GitBranch()
     return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
@@ -121,13 +124,10 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_javascript_checkers = ['standard']
-let g:syntastic_loc_list_height=1
-nmap <F9> :Errors<cr>
-imap <F9> <ESC>:Errors<cr>
+" ALE
+let g:ale_linters = {
+\    'javascript': ['standard'],
+\}
 
 " Airline config
 let g:airline_theme='base16'
