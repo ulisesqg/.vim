@@ -18,10 +18,14 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" remap ESC
+noremap uu <ESC>
+imap uu <ESC>
+
 " smart way to move between windows
+map <C-h> <C-W>h
 map <C-j> <C-W>j
 map <C-k> <C-W>k
-map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " maps for easily move lines
